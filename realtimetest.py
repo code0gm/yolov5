@@ -27,7 +27,13 @@ while True:
     
     result = model(img)
     
-    cv2.imshow("result", np.squeeze(result.render()))
+    # Render the result and squeeze the dimensions
+    rendered_result = np.squeeze(result.render())
+
+    # Resize the image to 50% of its original size
+    resized_result = cv2.resize(rendered_result, (0, 0), fx=0.5, fy=0.5)
+
+    cv2.imshow("result", resized_result)
     
     print('fps:', 1/(time.time()-t))
     

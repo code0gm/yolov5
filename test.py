@@ -5,6 +5,7 @@ print("CUDA 사용 가능:", torch.cuda.is_available())
 
 # YOLOv5 모델 로드
 model = torch.hub.load('ultralytics/yolov5', 'yolov5s', pretrained=True)
+#model.to('cpu')
 print("모델 로드 성공")
 
 # 이미지 경로 정의
